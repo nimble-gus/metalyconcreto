@@ -68,3 +68,4 @@ Los colores principales están definidos en `tailwind.config.ts`. Puedes modific
 - El botón de WhatsApp es flotante y siempre visible en la esquina inferior derecha
 
 
+

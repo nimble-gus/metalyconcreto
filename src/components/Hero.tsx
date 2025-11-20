@@ -78,7 +78,7 @@ export default function Hero() {
                   Nuestros Servicios
                 </a>
                 <a
-                  href="#cotiza"
+                  href="/cotiza"
                   className="bg-white text-brand-red px-8 py-4 rounded-full hover:bg-gray-100 transition-all duration-200 font-semibold text-center shadow-lg hover:shadow-xl transform hover:-translate-y-1 border-2 border-brand-red"
                 >
                   Solicitar Cotización

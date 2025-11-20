@@ -2,23 +2,18 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { Facebook, Instagram, Linkedin, Mail, Phone } from 'lucide-react';
+import { Facebook, Linkedin, Mail, Phone } from 'lucide-react';
 
 const socialLinks = [
   {
     name: 'Facebook',
     icon: Facebook,
-    href: '#',
-  },
-  {
-    name: 'Instagram',
-    icon: Instagram,
-    href: '#',
+    href: 'https://www.facebook.com/MetalConcretoGT',
   },
   {
     name: 'LinkedIn',
     icon: Linkedin,
-    href: '#',
+    href: 'https://www.linkedin.com/company/metal-y-concreto/',
   },
 ];
 
