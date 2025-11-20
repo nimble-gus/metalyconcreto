@@ -10,6 +10,11 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Metal y Concreto - Constructora Moderna",
   description: "Especialistas en estructura en acero, diseño y planificación de proyectos",
+  icons: {
+    icon: '/logob.png',
+    shortcut: '/logob.png',
+    apple: '/logob.png',
+  },
 };
 
 export default function RootLayout({
