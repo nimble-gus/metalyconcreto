@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { Mail, Phone, MapPin, Clock, Send, CheckCircle } from 'lucide-react';
 
 export default function ContactoPage() {
@@ -74,8 +75,18 @@ export default function ContactoPage() {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="bg-gray-400 text-white py-20 sm:py-24 lg:py-32">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative text-white py-20 sm:py-24 lg:py-32 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/contacto.jpg"
+            alt="Contáctanos"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-gray-400/70"></div>
+        </div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
               Contáctanos
