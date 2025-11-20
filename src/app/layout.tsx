@@ -8,7 +8,7 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Metal y Concreto - Constructora Moderna",
+  title: "Metal y Concreto - Especialistas en estructura en acero",
   description: "Especialistas en estructura en acero, diseño y planificación de proyectos",
   icons: {
     icon: '/logob.png',
