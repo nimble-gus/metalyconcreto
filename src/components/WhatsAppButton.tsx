@@ -1,8 +1,12 @@
 'use client';
 
 import { MessageCircle } from 'lucide-react';
+import { usePathname } from 'next/navigation';
 
 export default function WhatsAppButton() {
+  const pathname = usePathname();
+  if (pathname?.startsWith('/admin')) return null;
+
   const phoneNumber = '46891986'; // Reemplazar con el número real
   const message = 'Hola, quisiera hacer una cotización.';
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;

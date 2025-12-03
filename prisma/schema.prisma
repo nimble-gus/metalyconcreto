@@ -1,0 +1,79 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  ADMIN
+  VIEWER
+}
+
+enum QuoteStatus {
+  DRAFT
+  SENT
+  APPROVED
+  REJECTED
+}
+
+model User {
+  id             String   @id @default(cuid())
+  name           String?
+  email          String   @unique
+  hashedPassword String
+  role           Role     @default(VIEWER)
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
+
+model Material {
+  id          String       @id @default(cuid())
+  name        String
+  description String?
+  unit        String       // e.g., "quintal", "vara", "m³"
+  category    String?
+  isActive    Boolean      @default(true)
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+  prices      PriceEntry[]
+  quoteItems  QuoteItem[]
+}
+
+model PriceEntry {
+  id         String    @id @default(cuid())
+  materialId String
+  material   Material  @relation(fields: [materialId], references: [id])
+  provider   String?
+  price      Float
+  currency   String    @default("GTQ") // Quetzales by default
+  validFrom  DateTime
+  validTo    DateTime?
+  createdAt  DateTime  @default(now())
+
+  @@index([materialId, validFrom(sort: Desc)])
+}
+
+model Quote {
+  id          String      @id @default(cuid())
+  quoteNumber Int         @default(autoincrement()) @unique
+  clientName  String
+  projectName String?
+  status      QuoteStatus @default(DRAFT)
+  items       QuoteItem[]
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+}
+
+model QuoteItem {
+  id         String   @id @default(cuid())
+  quoteId    String
+  quote      Quote    @relation(fields: [quoteId], references: [id], onDelete: Cascade)
+  materialId String
+  material   Material @relation(fields: [materialId], references: [id])
+  quantity   Float
+  unitPrice  Float
+  total      Float
+}
