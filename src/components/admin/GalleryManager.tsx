@@ -180,6 +180,7 @@ export default function GalleryManager({ images: initialImages }: { images: Gall
                 >
                   <GripVertical className="w-5 h-5 pointer-events-none" />
                 </div>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={img.url}
                   alt={img.alt || 'Galería'}
