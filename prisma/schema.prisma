@@ -77,3 +77,12 @@ model QuoteItem {
   unitPrice  Float
   total      Float
 }
+
+model GalleryImage {
+  id        String   @id @default(cuid())
+  url       String   // S3 URL pública
+  key       String   // S3 object key para eliminación
+  alt       String   @default("")
+  sortOrder Int      @default(0)
+  createdAt DateTime @default(now())
+}

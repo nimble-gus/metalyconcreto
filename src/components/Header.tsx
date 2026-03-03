@@ -11,8 +11,6 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
 
-  if (pathname?.startsWith('/admin')) return null;
-
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
@@ -23,9 +21,12 @@ export default function Header() {
 
   const navLinks = [
     { href: '/servicios', label: 'Servicios' },
+    { href: '/galeria', label: 'Galería' },
     { href: '/acerca-de-nosotros', label: 'Acerca de Nosotros' },
     { href: '/contacto', label: 'Contacto' },
   ];
+
+  if (pathname?.startsWith('/admin')) return null;
 
   return (
     <header

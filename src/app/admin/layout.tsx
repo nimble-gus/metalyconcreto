@@ -29,6 +29,16 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                                         Precios
                                     </a>
                                 </li>
+                                <li>
+                                    <a href="/admin/gallery" className="block rounded p-2 hover:bg-gray-800">
+                                        Galería
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/admin/users" className="block rounded p-2 hover:bg-gray-800">
+                                        Usuarios
+                                    </a>
+                                </li>
                             </ul>
                         </nav>
                     </div>

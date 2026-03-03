@@ -79,6 +79,14 @@ export default function Footer() {
               </li>
               <li>
                 <Link
+                  href="/galeria"
+                  className="text-gray-600 hover:text-primary-600 transition-colors duration-200"
+                >
+                  Galería
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/acerca-de-nosotros"
                   className="text-gray-600 hover:text-primary-600 transition-colors duration-200"
                 >
