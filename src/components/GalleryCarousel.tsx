@@ -173,16 +173,16 @@ export default function GalleryCarousel({ images: propImages }: { images?: Galle
           </AnimatePresence>
         </div>
 
-        {/* Indicadores (dots) - área táctil amplia en móvil */}
+        {/* Indicadores (dots) - compactos en móvil, normales en desktop */}
         <div className="flex justify-center gap-1 sm:gap-2">
           {galleryImages.map((_, index) => (
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`rounded-full transition-all duration-300 touch-manipulation min-w-[44px] min-h-[44px] sm:min-w-0 sm:min-h-0 flex items-center justify-center ${
+              className={`rounded-full transition-all duration-300 touch-manipulation flex items-center justify-center p-2 sm:p-1 ${
                 index === currentIndex
-                  ? 'bg-brand-red w-8 h-3 sm:w-8 sm:h-3'
-                  : 'bg-gray-300 hover:bg-gray-400 w-3 h-3 sm:w-3 sm:h-3'
+                  ? 'bg-brand-red w-5 h-1.5 sm:w-8 sm:h-3'
+                  : 'bg-gray-300 hover:bg-gray-400 w-1.5 h-1.5 sm:w-3 sm:h-3'
               }`}
               aria-label={`Ir a imagen ${index + 1}`}
               aria-current={index === currentIndex}
