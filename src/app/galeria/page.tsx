@@ -2,6 +2,8 @@ import Image from 'next/image';
 import { getGalleryImages } from '@/lib/gallery-actions';
 import GalleryCarousel from '@/components/GalleryCarousel';
 
+export const dynamic = 'force-dynamic';
+
 export default async function GaleriaPage() {
   const images = await getGalleryImages();
   return (
